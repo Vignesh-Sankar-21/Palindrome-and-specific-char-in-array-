@@ -1,0 +1,32 @@
+package vignesh;
+public class Main {
+	public static void main(String[] args) {
+		String words[]= {"abc","bcd","aba","cfg","madam"};
+		String ans = index(words);
+		
+		System.out.println(ans);
+	
+}
+	public static String index(String[] words) {
+		for(String word:words) {
+			if(palindrone(word)) {
+				return word;
+			}	
+		}
+		return null;
+			
+	}
+	public static boolean palindrone(String s) {
+		int first =0;
+		int last = s.length()-1;
+		while(first<last) {
+			if(s.charAt(first)!=s.charAt(last)) {
+				return false;
+			}
+			first++;
+			last--;
+		}
+		return true;
+	}
+}
+
